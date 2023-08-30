@@ -1,0 +1,51 @@
+﻿@using WebNaN.Models;
+@model List<Product>;
+
+
+
+<link href="~/css/host.css" rel="stylesheet" />
+    <div class="A-flex">
+  
+        <main class="A">
+        @foreach (var item in Model)
+        {
+            <article class="card">
+
+                <div class="Pic1">
+                    <h1>@item.ProductName</h1>
+                    
+                        @if (item.Photos.Count > 0)
+                    {
+                          <img src="~/Image/more/@item.Photos.FirstOrDefault().PhotoUrl" alt="">
+                    }else{
+                        <img src="~/Image/erorimage.jpg" alt="">
+                    }
+                    
+                  
+                    <div class="Cardbutton">
+                        <a href="/Home/ReadMore/@item.ProductId" id="etrafli"><button class="button-64" role="button">
+                                <span class="text" id="tx1">Ətraflı</span>
+                            </button>
+                        </a>
+                        <button class="button-64" role="button"><span class="text">İndi Al</span></button>
+
+                    </div>
+                </div>
+
+            </article>
+
+            }
+        </main>
+        <div class="WatchLogo">
+
+            <h1>
+                <span>always be</span>
+                <div class="message">
+                    <div class="word1">Cool</div>
+                    <div class="word2">Rich </div>
+                    <div class="word3">Creating</div>
+                </div>
+            </h1>
+
+        </div>
+    </div>

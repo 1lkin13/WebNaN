@@ -1,0 +1,198 @@
+﻿/* scrol  */
+/* width */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/*::-webkit-scrollbar {
+    width:0.5px!important;
+    height:15px;
+
+
+}*/
+
+/* Track */
+/*::-webkit-scrollbar-track {
+    background: rgba(2, 7, 16, 0.733);
+}*/
+
+/* Handle */
+/*::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 128, 255);
+}*/
+
+   /*  Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background-color:black!important;
+    }
+
+
+#name {
+    color: rgb(34, 137, 255);
+    font-size: 24px;
+}
+
+.div {
+    width: 100%;
+    height: 40px;
+    /*     background-color:red;*/
+    text-align: center;
+}
+
+.d-flex {
+    width: 15%;
+}
+
+.navbar {
+    background-color: rgb(0, 0, 0) !important;
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: rgb(254, 255, 255) !important;
+    font-size: 19px !important;
+    font-family: 'Raleway', sans-serif !important;
+}
+
+    .nav-link:hover {
+        color: rgb(17, 188, 255) !important;
+    }
+
+.About {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to top, rgba(8, 12, 47, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(33, 40, 64, 0.805) 75%, rgb(9, 9, 31) 100%), url(../Image/wave-haikei.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    padding-top: 130px;
+    box-sizing: border-box;
+}
+
+.Number {
+    width: 70%;
+    height: 500px;
+    background-color: rgba(2, 7, 16, 0.733);
+    /* background: transparent; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    border: 0.5px solid rgb(0, 128, 255);
+    animation-name: Scale;
+    animation-duration: 2s;
+}
+
+.First {
+    width: 55%;
+    height: 500px;
+    /* background-color: bisque; */
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+.Twice {
+    width: 45%;
+    height: 500px;
+    /* background-color: brown; */
+}
+
+.Third {
+    width: 100%;
+    height: 100px;
+    top:10px;
+    position: relative;
+    /* display: flex; */
+    text-align: center;
+    /* background-color: cornflowerblue; */
+}
+
+    .Third button {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+.Second {
+    width: 100%;
+    height: 400px;
+    color: white;
+    /* background-color: rgba(2, 7, 16, 0.955); */
+    background-color: rgba(2, 7, 16, 0.733);
+    /* background-color: rgba(10, 26, 54, 0.435); */
+
+    text-align: center;
+}
+.Second p{
+    width:100%;
+    height:200px!important;
+
+}
+.Morepic {
+    width: 100%;
+    height: 200px !important;
+    background-color: transparent !important;
+    position: relative;
+    display:flex;
+    overflow-y:auto!important;
+    overflow-y:scroll;
+ 
+}
+.modelpic{ border: 0.5px solid rgb(0, 128, 255);
+  
+    border-right:none!important;
+    border-left:none;
+    cursor:pointer;
+}
+    .modelpic:hover {
+        border: 0.1px solid white;
+        border-right: none !important;
+        border-left: none;
+    } 
+
+
+
+
+
+.First img {
+    margin-left: 30px;
+    width: 75%;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.First:hover img {
+    width: 80%;
+    /* height: 350px; */
+    /* box-shadow: rgba(212, 212, 212, 0.56) 0px 22px 70px 4px;
+ box-shadow: 0 0 5px #008cff, 0 0 25px #008cff, 0 0 50px #008cff,
+    0 0 100px #008cff; */
+    box-shadow: 0 0 5px #008cff, 0 0 25px #008cff, 0 0 50px #008cff, 0 0 100px #008cff;
+    transition: ease-out 1s;
+}
+
+
+@keyframes Scale {
+
+    from {
+        transform: scale(-0.5);
+        box-shadow: 0 0 5px #008cff, 0 0 25px #008cff, 0 0 50px #008cff, 0 0 100px #008cff;
+    }
+
+    to {
+        box-shadow: 0 0 5px #008cff, 0 0 25px #008cff, 0 0 50px #008cff, 0 0 100px #008cff;
+        transform: scale(1);
+    }
+}
+.btn-primary a{
+    text-decoration:none!important;
+        color:white!important;
+}
+.btn-danger a {
+    text-decoration: none!important;
+    color: white!important;
+}
+.btn-succes {
+    position:fixed!important;
+}

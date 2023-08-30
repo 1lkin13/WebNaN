@@ -1,0 +1,17 @@
+﻿@using WebNaN.Models;
+@model Product;
+<link href="~/css/edit.css" rel="stylesheet" />
+<div class="Add">
+
+
+
+    <form action="/Home/Update/@Model.ProductId" method="post" enctype="multipart/form-data">
+
+        <input type="text" placeholder="Name" class="form-control mb-3" name="ProductName" value="@Model.ProductName">
+        <input type="file" class="form-control mb-3" name="ProductPhoto" placeholder="Photo" >
+        <textarea name="ProductInfo" placeholder="Info" class="form-control mb-3" value="@Model.ProductInfo"> @Model.ProductInfo</textarea>
+        <button class="btn btn-primary">Kaydet</button>
+
+        </form>
+
+</div>

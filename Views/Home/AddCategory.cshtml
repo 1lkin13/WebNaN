@@ -1,0 +1,21 @@
+﻿@using WebNaN.Models;
+@model List<Category>
+
+<link href="~/css/addcategory.css" rel="stylesheet" />
+
+
+
+<div class="Add">
+
+
+
+    <form action="/Home/AddCategory" method="post" enctype="multipart/form-data">
+
+        <input type="text" placeholder="Name" class="form-control mb-3" name="CategoryName" />
+        <input type="file" class="form-control mb-3" name="CategoryPic" placeholder="Photo">
+
+        <button class="btn btn-success">Add Category</button>
+
+    </form>
+
+</div>

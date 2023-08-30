@@ -1,0 +1,44 @@
+﻿@using WebNaN.Models;
+@model List<Category>
+
+
+<link href="~/css/Products.css" rel="stylesheet" />
+
+@foreach (var item in ViewBag.Category)
+{
+
+    <div class="A-flex">
+
+        <main class="A">
+
+            <article class="kart ">
+
+                <div class="SlidePic first">
+
+                    <img src="~/Image/@item.CategoryPic" alt="">
+                    <div class="Slidetext">
+                        <h1>@item.CategoryName</h1>
+                        <a href="/Home/Host/@item.CategoryId">
+                            <h2 cat="@item.CategoryId"> Click For More</h2>
+                        </a>
+                    </div>
+                </div>
+
+            </article>
+
+        </main>
+        <div class="WatchLogo">
+
+            <h1>
+                <span>always be</span>
+                <div class="message">
+                    <div class="word1">Cool</div>
+                    <div class="word2">Rich </div>
+                    <div class="word3">Creating</div>
+                </div>
+            </h1>
+
+        </div>
+    </div>
+}
+@await Html.PartialAsync("_footer")

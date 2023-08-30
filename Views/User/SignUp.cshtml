@@ -1,0 +1,49 @@
+﻿@using WebNaN.Models
+@{
+    Layout = null;
+}
+
+@model User
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slide Navbar</title>
+    <link href="~/css/login.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form asp-action="Login" asp-controller="User" method="post">
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="text" asp-for="UserName" placeholder="UserName" required="">
+
+                <input type="password" asp-for="UserPassword" placeholder="Password" required="">
+
+                <div asp-validation-summary="All"></div>
+
+                <button>Login</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form asp-action="SignUp" asp-controller="User" method="post">
+                <label for="chk" aria-hidden="true">Sign Up</label> 
+                
+   <input type="text" asp-for="UserName" placeholder="UserName"   required="">
+               
+          
+                <input type="password" asp-for="UserPassword" placeholder="Password" required="">
+                
+                <button>SignUp</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

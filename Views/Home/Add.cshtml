@@ -1,0 +1,31 @@
+﻿@using WebNaN.Models;
+@model Product;
+
+<link href="~/css/add.css" rel="stylesheet" />
+
+<div class="Add">
+    <form asp-action="Add" asp-controller="Home" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Name" class="form-control mb-3" asp-for="ProductName" />
+        <span asp-validation-for="ProductName" class="text-danger"></span>
+        <select class="form-control mb-3" asp-for="ProductCategoryId" asp-items="ViewBag.Categories">
+
+            <option value="">Category</option>
+
+        </select>
+        <span asp-validation-for="ProductCategoryId" class="text-danger"></span>
+        <input type="file" class="form-control mb-3" name="ProductPhoto" id="ProductPhotoSelect">
+
+       <div class="photoarea">
+
+          @* <div class="item">
+               <img src="~/Image/apple_airtag_leather_key_ring_saddle_brown_1-removebg-preview.png">
+                <input type="file" class="form-control mb-3" name="ProductPhoto">
+           </div>*@
+           
+       </div>
+        <textarea asp-for="ProductInfo" placeholder="Info" class="form-control mb-3"></textarea>
+        <span asp-validation-for="ProductInfo" class="text-danger"></span>
+        <button class="btn btn-success">Əlavə Et</button>
+    </form>
+</div>
+<script src="/js/JavaScript.js"></script>

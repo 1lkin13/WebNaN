@@ -1,0 +1,127 @@
+﻿@using System.Security.Claims
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+    <script src="https://use.fontawesome.com/20ab91acc4.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Image/Logo.jpg" type="image/x-icon">
+
+    <title>WebNan</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Index">Ana Səhifə</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/About">Haqqımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Products">Kategorilər</a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated && (User.FindFirst(ClaimTypes.Role).Value == "Admin" || User.FindFirst(ClaimTypes.Role).Value == "Moderator"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Add" id="ilkin">Məhsul Əlavə Et</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Addcategory" id="mehdi">Kategori Əlavə Et</a>
+                        </li>
+                    }
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Əlaqə</a>
+                    </li>
+                </ul>
+
+
+@*
+                @if (User.Identity.IsAuthenticated && (User.FindFirst(ClaimTypes.Role).Value == "Admin" || User.FindFirst(ClaimTypes.Role).Value == "Moderator"))
+                {*@
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form class="d-flex">
+                        
+                            <div class="div">
+                            <span id="name">@User.FindFirst(System.Security.Claims.ClaimTypes.Name).Value </span>
+                        </div>
+                        <a href="/User/LogOut"> <button class="btn btn-primary" type="button" id="nan">Çıxış</button></a>
+
+
+                    </form>
+
+
+                }
+                else
+                {
+
+                    <form class="d-flex">
+
+                            <div class="div">
+                            <span id="name"> </span>   </div>
+                       
+                        <a href="/User/SignUp"> <button class="btn btn-primary " type="button">Giriş</button></a>
+
+
+
+                    </form>
+
+
+                }
+
+
+
+
+                @*  @if(User.Identity.IsAuthenticated){
+                @if(User.Claims.SingleOrDefault(x=>x.Type==System.Security.Claims.ClaimTypes.Sid.Value=="1"))
+                }
+
+                else{
+                *@
+
+
+
+            </div>
+        </div>
+    </nav>
+
+
+    @RenderBody()
+    @*    @await Html.PartialAsync("_footer")*@
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    @*   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/site.js"></script>
+    *@
+
+</body>
+</html>

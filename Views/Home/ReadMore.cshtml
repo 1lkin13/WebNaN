@@ -1,0 +1,37 @@
+﻿@using WebNaN.Models;
+@*@model List<Product>;*@
+    @model Product;
+<link href="/css/readmore.css" rel="stylesheet" />
+@using System.Security.Claims
+
+<div class="About">
+    <div class="Number">
+        <div class="First">
+            <img src="~/Image/more/@Model.Photos.ToList()[0].PhotoUrl" alt="">
+        </div>
+        <div class="Twice">
+            <div class="Second">
+                <p>@Model.ProductInfo</p>
+                <div class="Morepic" id="pics">
+                    @foreach (var p in Model.Photos)
+                    {
+                        <img src="/Image/more/@p.PhotoUrl" alt="" class="modelpic">
+                    }
+                </div>
+            </div>
+            <div class="Third">
+                @if (User.Identity.IsAuthenticated && User.FindFirst(ClaimTypes.Role).Value == "Admin")
+                {
+                    <button type="button" class="btn btn-primary">  <a href="/Home/Edit/@Model.ProductId">Düzəliş Et </a> </button>
+                  <button type="button" class="btn btn-danger">   <a href="/Home/Delete/@Model.ProductId">Delete </a></button>
+                }
+                <button type="button" class="btn btn-success">Indi Al</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/ReadMore.js"></script>
